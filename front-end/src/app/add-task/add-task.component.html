@@ -1,0 +1,29 @@
+<div class="container notification field" style="width:40%;margin:auto">
+<h4  class="title is-4">Add New Task :</h4>
+  <form  (ngSubmit)="onSubmit()">
+    <div class="control">
+      <label class="label" for="title">Title</label>
+      <input class="input" type="text" [(ngModel)]="newTask.title" name="title" required>
+    </div>
+     <br/>
+    <div class="control">
+      <label class="label" for="priority">Select Priority</label>
+      <div class="select">
+      <select [(ngModel)]="newTask.priority" name = "priority" >
+          <option value="High">High Priority</option>
+          <option value="Medium">Medium Priority</option>
+          <option value="Low">Low Prioirty</option>
+      </select>
+      </div>
+    </div>
+    <br/>
+    <div class="control">
+      <label class="label" for="description">description</label>
+      <input class="input" type="text" [(ngModel)]="newTask.description" name="description" required>
+    </div>
+    <br/>
+    <div class="control">
+    <button type="submit" class="button is-primary">Submit</button>
+  </div>
+  </form>
+</div>

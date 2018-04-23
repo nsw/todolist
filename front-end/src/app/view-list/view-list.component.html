@@ -1,0 +1,26 @@
+
+ <h3 class="title is-3"> Todo List App </h3>
+
+ <!-- Table starts here -->
+ <table class="table is-striped is-fullwidth" id="table" style="margin:auto;width:75%">
+     <thead>
+       <tr>
+         <th>Priority Level</th>
+         <th>Title</th>
+         <th>Description</th>
+         <th>Action </th>
+
+       </tr>
+     </thead>
+     <tbody>
+       <tr *ngFor="let list of lists">
+         <td>{{list.priority}}</td>
+         <td>{{list.title}}</td>
+         <td>{{list.description}}</td>
+         <td> <button class="button is-danger" type="button" (click)="deleteTask(list); $event.stopPropagation();">Delete</button></td>
+       </tr>
+     </tbody>
+  </table>
+   <br/>
+   <hr>
+  <app-add-task (addTask)='onAddTask($event)'> </app-add-task>
